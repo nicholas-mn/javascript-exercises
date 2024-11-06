@@ -1,19 +1,19 @@
-const removeFromArray = function(array, arrayRemove) {
-    
-    newArray = []
+const removeFromArray = function (array, arrayRemove) {
 
-    for (const x of array) {
-        
-        if (x === arrayRemove) {
+    let newArray = [];
+    arrayRemove = Array.prototype.slice.call(arguments, 1);
+
+    for (const x in array) {
+
+        if (arrayRemove.includes(array[x])) {
             continue
         } else {
-        
-        newArray.push(x)
+            newArray.push(array[x])
         }
+
     }
 
     return newArray
 };
 
-// Do not edit below this line
 module.exports = removeFromArray;
